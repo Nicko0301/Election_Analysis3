@@ -6,7 +6,7 @@ import csv
 import os
 
 # Add a variable to load a file from a path.
-file_to_load = os.path.join("Resources", "election_results.csv")
+file_to_load = os.path.join("resources", "election_results.csv")
 # Add a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
@@ -117,6 +117,8 @@ with open(file_to_save, "w") as txt_file:
          
 
          # 6e: Save the county votes to a text file.
+        txt_file.write(county_results)
+        
 
          # 6f: Write an if statement to determine the winning county and get its vote count.
         if (vote_count > county_count):
@@ -135,6 +137,7 @@ with open(file_to_save, "w") as txt_file:
 
 
     # 8: Save the county with the largest turnout to a text file.
+    txt_file.write(largest_county_summary)
 
 
     # Save the final candidate vote count to the text file.
@@ -169,4 +172,3 @@ with open(file_to_save, "w") as txt_file:
 
     # Save the winning candidate's name to the text file
     txt_file.write(winning_candidate_summary)
-# print(county_votes)
